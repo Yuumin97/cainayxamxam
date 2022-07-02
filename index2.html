@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <style>
+        h2{
+            color: deeppink;
+            text-align: center;
+            font-family: "High Tower Text";
+        }
+        body{
+            background-image: url("181b292e43dad2bc8db6ca95cd23539d.jpg");
+            background-size: cover;
+            height: 90%;
+            width: 90%}
+        button{
+            position: absolute;
+        }
+        h1 {
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count:infinite;
+        }
+
+        @keyframes example {
+            from {color: red;}
+            to {color: yellow;}
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+<br>
+<audio autoplay>
+    <source src="Lac-Vao-Trong-Mo-Remix-Simon-C-Wuy-Cukak-Remix.mp3"></audio>
+<h1 style="text-align: center">Cậu ơi tớ muốn nói điều này <i class="bi bi-emoji-sunglasses-fill"></i></h1>
+<marquee direction="up"><h2 >Cậu làm người yêu tớ nhé <i class="bi bi-emoji-kiss"></i></h2></marquee>
+<br>
+<h3 style="text-align: center;color: deeppink" >Cậu hãy quyết định ở nút bấm phía dưới đi <i class="bi bi-emoji-heart-eyes"></i></h3>
+<button id="co" onclick="bam()" style="top:400px; left:350px;width: 20%; height: 10%;background-color: darkred;color: white;border-radius: 50px " ><h3><i class="bi bi-heart"></i> <i>Tất nhiên là đồng ý rồi<i> <i class="bi bi-heart"></i></h3></button>
+<button id="khong" onmouseover="chay()" style="top: 400px; left : 800px;width: 10%;height: 10%;border-radius: 30px;background-color: saddlebrown;color: white"><h3>Mơ à  <i class="bi bi-emoji-smile-upside-down-fill"></i></h3></button>
+<script>
+    function bam(){
+        window.location.href = "index3.html";
+    }
+    function chay(){
+        let chieuCao = document.innerHeight;
+        let chieuDai = document.innerWidth;
+        document.getElementById('khong').style.top = Math.floor(Math.random() * innerHeight) + 'px';
+        document.getElementById('khong').style.left = Math.floor(Math.random() * innerWidth)+ 'px';
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<audio autoplay>
+    <source src="Anh-Se-Don-Em-Remix-Nguyen-Trang-Cukak-Remix.mp3"></audio>
+<marquee direction="up"><h1 style="color: rebeccapurple;text-align: center" >Run Run Shipper tới đây <i class="bi bi-gift-fill"></i> </h1></marquee>
+<h2 style="text-align: center;color: deeppink">Cậu hãy di chuyển shipper tới cái hộp quà bằng phím di chuyển nhé <i class="bi bi-balloon-heart-fill"></i> </h2>
+<img  src="anh1.png" id="hinh" style="width: 150px; height: 200px; position: absolute; top: 0px; left: 0px;border-radius: 25px">
+<img  src="pngtree-birthday-gift-exquisite-gift-box-image_1472801.jpg" id="qua" style="width: 150px; height:200px; position: absolute; top: 400px; left:900px;border-radius: 20px">
+<script>
+    let image = document.getElementById('hinh');
+    let image2 =document.getElementById('qua');
+    window.addEventListener("keydown", moveWithKeyboard);
+    function moveRight() {
+        image.style.left = parseInt(image.style.left) + 20 +'px';
+    }
+    function moveLeft() {
+        image.style.left = parseInt(image.style.left) - 20 +'px';
+    }
+    function moveUp() {
+        image.style.top = parseInt(image.style.top) - 20 +'px';
+    }
+    function moveDown() {
+        image.style.top = parseInt(image.style.top) + 20 +'px';
+    }
+    function moveWithKeyboard(evt) {
+        let a = parseInt(image.style.left);
+        let b = parseInt(image.style.top);
+        let pa = parseInt(image2.style.left);
+        let pb = parseInt(image2.style.top);
+
+        let gx = a + parseInt(image.style.width);
+        let gy = b + parseInt(image.style.height);
+        let px = pa + parseInt(image2.style.width);
+        let py = pb + parseInt(image2.style.height);
+
+        let x = gx >= pa && px >= a;
+        let y = gy >= pb && py >= b;
+
+        if (x && y) {
+            if (gx == pa || gy == pb || px == a) {
+                moveLeft();
+            }
+            if (gy == pb) {
+                moveUp();
+            }
+            if (px == a) {
+                moveRight();
+            }
+            if (py == b) {
+                moveDown();
+            }
+            document.location.href = "index2.html"
+            console.log(moveRight())
+        } else {
+            switch (evt.keyCode){
+                case 37:
+                    moveLeft();
+                    break;
+                case 39:
+                    moveRight();
+                    break;
+                case 38:
+                    moveUp();
+                    break;
+                case 40:
+                    moveDown();
+                    break;
+            }
+        }}
+</script>
+</body>
+</html>
